@@ -21,7 +21,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN pnpm build
 
 # ---- runner ----
-FROM nginx:1.27-alpine AS runner
+FROM nginx:1.31-alpine AS runner
 
 # Replace the default nginx config with our SPA-aware one
 COPY nginx.conf /etc/nginx/nginx.conf
