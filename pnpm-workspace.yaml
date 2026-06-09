@@ -1,3 +1,10 @@
-onlyBuiltDependencies:
+# sharp is pulled in by Next.js for next/image runtime optimization.
+# Static export never calls it, so we skip the install entirely (saves ~30 MB).
+ignoredOptionalDependencies:
   - sharp
+
+# unrs-resolver is a hard transitive dep of eslint-config-next.
+# Listing it here lets pnpm build its native binary without warnings in dev.
+# CI/Docker still pass --ignore-scripts since neither runs lint at install time.
+onlyBuiltDependencies:
   - unrs-resolver

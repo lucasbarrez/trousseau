@@ -21,7 +21,9 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        # --ignore-scripts skips native binary builds (sharp, unrs-resolver).
+        # We don't need them for lint + typecheck — both have JS fallbacks.
+        run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Lint
         run: pnpm lint

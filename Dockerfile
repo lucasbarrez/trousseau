@@ -6,7 +6,10 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 RUN corepack enable
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN pnpm install --frozen-lockfile
+# --ignore-scripts skips native binary builds (sharp, unrs-resolver).
+# We do a static export so next/image's sharp optimization isn't needed,
+# and unrs-resolver is only used at lint time.
+RUN pnpm install --frozen-lockfile --ignore-scripts
 
 # ---- builder ----
 FROM node:22-alpine AS builder
