@@ -63,8 +63,8 @@ type SerializedDossier = Omit<
 };
 
 function serialize(dossier: Dossier): SerializedDossier {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     photoData,
     tenants,
     guarantors,

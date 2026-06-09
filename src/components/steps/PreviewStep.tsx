@@ -252,7 +252,7 @@ export function PreviewStep() {
                     Afficher le résumé par personne
                   </span>
                   <span className="block text-[12px] text-[var(--color-fg-subtle)] leading-snug mt-0.5">
-                    Inclut poste, employeur, revenus et situation sur la page d'intercalaire de chaque personne.
+                    Inclut poste, employeur, revenus et situation sur la page d&apos;intercalaire de chaque personne.
                   </span>
                 </span>
               </label>
