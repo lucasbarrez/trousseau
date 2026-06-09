@@ -1,0 +1,30 @@
+services:
+  trousseau:
+    container_name: trousseau
+    # Two ways to run this stack:
+    #
+    # 1. Build from source (works on a fresh clone, used by Komodo):
+    build: .
+    #
+    # 2. Pull the prebuilt multi-arch image from GHCR (faster, no build step).
+    #    Comment out `build:` above and uncomment the line below:
+    # image: ghcr.io/lucasbarrez/trousseau:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+    # If you front this with Pangolin / Traefik / Caddy on a shared Docker
+    # network, remove the `ports:` block above and uncomment below:
+    #
+    # networks:
+    #   - pangolin
+
+# networks:
+#   pangolin:
+#     external: true
