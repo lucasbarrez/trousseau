@@ -6,6 +6,13 @@ updates:
       interval: weekly
       day: monday
     open-pull-requests-limit: 5
+    ignore:
+      # ESLint 10 has no compatible eslint-config-next yet; wait for upstream.
+      - dependency-name: eslint
+        update-types: [version-update:semver-major]
+      # TypeScript majors are picked up via @types groups — let them rollup.
+      - dependency-name: typescript
+        update-types: [version-update:semver-major]
     groups:
       radix:
         patterns:
@@ -40,6 +47,11 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    ignore:
+      # Stay on the Active LTS line for Node — current (odd) releases aren't
+      # supported long enough for a self-hosted project to follow.
+      - dependency-name: node
+        update-types: [version-update:semver-major]
     commit-message:
       prefix: build
       include: scope
