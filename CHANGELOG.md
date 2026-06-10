@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/lucasbarrez/trousseau/compare/v1.0.0...v1.0.1) (2026-06-10)
+
+
+### Bug Fixes
+
+* **build:** pin Node 24 LTS, bump deps to latest stable ([0ec0ee4](https://github.com/lucasbarrez/trousseau/commit/0ec0ee4218b781345b48d10841724344a83215a6))
+
 ## 1.0.0 (2026-06-09)
 
 
