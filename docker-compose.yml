@@ -22,9 +22,9 @@ services:
     # If you front this with Pangolin / Traefik / Caddy on a shared Docker
     # network, remove the `ports:` block above and uncomment below:
     #
-    # networks:
-    #   - pangolin
+    networks:
+      - pangolin
 
-# networks:
-#   pangolin:
-#     external: true
+networks:
+  pangolin:
+    external: true
