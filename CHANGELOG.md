@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/lucasbarrez/trousseau/compare/v1.0.1...v1.0.2) (2026-06-11)
+
+
+### Bug Fixes
+
+* **docker:** uncomment networks configuration for Pangolin integration ([19566da](https://github.com/lucasbarrez/trousseau/commit/19566daa9419468c25f631baebe823b3f790282b))
+
 ## [1.0.1](https://github.com/lucasbarrez/trousseau/compare/v1.0.0...v1.0.1) (2026-06-10)
 
 
